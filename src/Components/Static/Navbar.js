@@ -4,14 +4,16 @@ import Header from './Header'
 import { Grid, Link, Box } from '@material-ui/core'
 
 const myStyles = makeStyles((theme)=>({
+    wrapper_navbar:{
+        background:"sticky",
+        top:0,
+    },
     main_Navbar_container:{
         maxWidth:"1200px",
-        padding:"10px 20px",
+        padding:"5px 20px",
         margin:"auto",
         textDecoration:"none",
         justifyContent:"space-between",
-        position:"sticky",
-        top:0,
     },
     navbar_part_first:{
         justifyContent:"space-between",
@@ -73,6 +75,7 @@ const Navbar = () => {
     return(
         <div>
         <Header />
+        <div className={classes.wrapper_navbar}>
         <Grid item container  xs={12} className={classes.main_Navbar_container}>
         <Grid item container className={classes.navbar_part_first}>
        <Link to="#"  className={classes.links_nav}><img src="/assets/Navbar/weber-logo.svg" alt="navbar" width="90" /></Link>
@@ -96,6 +99,7 @@ const Navbar = () => {
         <img src="./assets/Navbar/cart.svg" alt="cart" width="25"/>
         </Grid>
         </Grid>
+        </div>
         </div>
     )
 }

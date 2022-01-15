@@ -2,6 +2,8 @@ import { Grid ,Box ,Button } from '@material-ui/core';
 import React from 'react'
 import { makeStyles } from '@material-ui/core/styles';
 import Grills from './Grills';
+import HomeFooter from './FooterBanner';
+import Footer from '../Static/Footer'
 
 const myStyles = makeStyles((theme)=>({
     Home_Head_Container:{
@@ -96,9 +98,10 @@ const HomeHeader = () => {
         </Box>
         </Grid>
         <div className={classes.Home_slider}>
-        
         <Grills />
         </div>
+        <HomeFooter />
+        <Footer />
         </div>
     )
 }

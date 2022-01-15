@@ -4,10 +4,12 @@ import { makeStyles } from "@material-ui/core/styles";
 import { Link } from "react-router-dom";
 import { Data, MeetData } from "./CardData";
 import HomeSlider from "./Slider";
+import IconsCard from "./IconsCards";
+import { IconsData } from "./IconsData";
 
 const myStyles = makeStyles((theme) => ({
   Grill_Title: {
-    fontSize: "44px",
+    fontSize: "38px",
     color: "#000",
     textAlign: "center",
     marginTop: "50px",
@@ -31,7 +33,7 @@ const myStyles = makeStyles((theme) => ({
       height: "400px",
     },
     [theme.breakpoints.down("sm")]: {
-      height: "300px",
+      height: "400px",
     },
   },
   sub_title_item: {
@@ -74,8 +76,8 @@ const myStyles = makeStyles((theme) => ({
   },
   card_full_Grills: {
     maxWidth: "360px",
-    display: "flex-blox",
     boxShadow: "4px 4px 8px gray",
+    margin:"0px auto",
   },
   card_Image: {
     // width:"100%",
@@ -103,9 +105,6 @@ const myStyles = makeStyles((theme) => ({
     fontWeight: 600,
     color: "#232323",
   },
-  mainDiv: {
-    margin: "10px auto",
-  },
   btn_header: {
     border: "1px solid red",
     background: "linear-gradient(red, red)",
@@ -113,13 +112,55 @@ const myStyles = makeStyles((theme) => ({
     color: "#fff",
     fontWeight: "500",
     width: "152px",
-    padding: "8px 0px",
+    padding: "0px 0px",
     textTransform: "capitalize",
     fontSize: "16px",
     fontFamily: "Roboto Slab",
     letterSpacing: "0.05em",
     marginTop: "20px",
   },
+  Banner_card_two:{
+    backgroundImage: "url(./assets/Banners/Bann2.jpg)",
+    width: "100%",
+    backgroundRepeat: "none",
+    backgroundSize: "cover",
+    textAlign: "left",
+    color: "#fff",
+    height: "570px",
+    marginTop: "80px",
+    alignItem: "center",
+    [theme.breakpoints.down("md")]: {
+      height: "400px",
+    },
+    [theme.breakpoints.down("sm")]: {
+      height: "400px",
+    },
+  },
+  Grills_sub_titles:{
+    textAlign:"center",
+    fontWeight:"600",
+    fontSize:"16px",
+    fontFamily:"Roboto Slab"
+  },
+  Icons_Card_section:{
+    padding:"10px 16px",
+    margin:"auto",
+    textAlign:"center",
+    marginTop:20,
+    [theme.breakpoints.down('xs')]:{
+      padding:"20px 0px",
+    }
+  },
+ Card_Grid:{
+   padding:"20px",
+   [theme.breakpoints.down('sm')]:{
+    padding:"20px 10px",
+  },
+   [theme.breakpoints.down('xs')]:{
+     padding:"20px 0px",
+   },
+   
+ }
 }));
 
 const Grills = () => {
@@ -144,7 +185,7 @@ const Grills = () => {
       <Typography className={classes.Grill_Title}>
         Our Favorite Picks
       </Typography>
-      <Grid item container xs={12} spacing={3} className={classes.mainDiv}>
+      <Grid item container xs={12} className={classes.mainDiv}>
         {Data.map((data) => {
           return (
             <Grid
@@ -175,11 +216,23 @@ const Grills = () => {
           );
         })}
       </Grid>
+      <div className={classes.Banner_card_two}>
+        <div className={classes.text_wrapper}>
+          <h1 className={classes.sub_title_item}>
+          NEW GRILL?
+          </h1>
+          <h2 className={classes.title_items}>Register for the Full Weber Grill Experience​</h2>
+          <Button variant="contained" className={classes.btn_header}>
+            Rigster Now
+          </Button>
+        </div>
+      </div>
       
       <Typography className={classes.Grill_Title}>
-        Our Favorite Picks
+      From Our Backyard to Yours
       </Typography>
-      <Grid item container xs={12} spacing={3} className={classes.mainDiv}>
+      <Typography className={classes.Grills_sub_titles}>Our best tips, tricks and recipes to keep you grilling.</Typography>
+      <Grid item container xs={12} className={classes.mainDiv}>
         {MeetData.map((data) => {
           return (
             <Grid
@@ -210,7 +263,23 @@ const Grills = () => {
           );
         })}
       </Grid>
-      
+      <Typography className={classes.Grill_Title}>
+      Why Buy From Weber
+      </Typography>
+      <Grid item container xs={12}>
+      {IconsData.map(data=>{
+        return(
+      <Grid item xs={12} sm={6} md={3} key={data.id} className={classes.Icons_Card_section}>
+      <IconsCard 
+      Images={data.image}
+      title={data.title}
+      Disc={data.discription}
+      Link={data.link}
+      />
+      </Grid>
+        )
+      })}
+      </Grid>
     </div>
   );
 };

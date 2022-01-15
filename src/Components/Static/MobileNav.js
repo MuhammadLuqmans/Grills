@@ -4,7 +4,7 @@ import { makeStyles } from '@material-ui/core/styles';
 
 const myStyles = makeStyles((theme)=>({
 toolBar_nav:{
-    padding:"13px",
+    padding:"13px 20px",
     display:"flex",
     backgroundColor:"#fff",
 },

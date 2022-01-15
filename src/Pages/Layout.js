@@ -4,6 +4,7 @@ import Grills from './Grills'
 import { Routes, Route } from 'react-router-dom'
 import Navbar from '../Components/Static/Navbar'
 import MobileNavbar from '../Components/Static/MobileNav'
+import Footer from '../Components/Static/Footer'
 import "./Layout.css"
 
 const Layout =()=>{

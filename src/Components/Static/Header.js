@@ -11,6 +11,7 @@ const myStyles = makeStyles((theme)=>({
         color:"#000",
         fontWeight:"600px",
         display:"flex-box",
+        lineHeight:"10px",
     },
     header_bg:{
         background:"#EDEDED",
