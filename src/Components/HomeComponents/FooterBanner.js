@@ -9,6 +9,7 @@ const myStyles = makeStyles((theme)=>({
         backgroundPosition:"center",
         backgroundSize:"cover",
         padding:"40px 20px",
+        marginTop:"40px",
     },
     Footer_wrapper:{
         color:"#fff",
@@ -37,13 +38,15 @@ const myStyles = makeStyles((theme)=>({
         fontWeight:"600",
         padding:"10px",
         width:"182px",
+        border:"2px solid red",
+        borderRadius:"5px",
     },
     input:{
         border:"none",
         fontSize:"16px",
         fontWeight:"500",
         color:"#000",
-        outline:"none"
+        outline:"none",
     },
     footer_Icons:{
         alignItems:"center",
@@ -87,7 +90,7 @@ const HomeFooter = () => {
         <Grid item xs={12} sm={12} md={4}>
         <Box className={classes.Input_footer}>
         <input type="text" placeholder='Email Address' className={classes.input} />
-        <Button className={classes.input_Button}>Sign up</Button>
+        <button className={classes.input_Button}>Sign up</button>
         </Box>
         </Grid>
         <Grid item xs={12} sm={6} md={4}>

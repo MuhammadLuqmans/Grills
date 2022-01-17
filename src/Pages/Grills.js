@@ -1,11 +1,21 @@
-import React from 'react'
+import { makeStyles } from "@material-ui/core/styles";
+import React from "react";
+import GrillsHeader from "../Components/GrillComponents/GrillsHeader";
+import GrillsPageLayout from "../Components/GrillComponents/GrillsPageLayout";
 
-const Grills =()=>{
-    return(
-        <div>
-        <h2>Grills</h2>
-        </div>
-    )
-}
+const myStyles = makeStyles((theme) => ({
+  
+}));
 
-export default Grills
+const Grills = () => {
+  const classes = myStyles()
+  
+  return (
+    <div>
+      <GrillsHeader />
+      <GrillsPageLayout />
+    </div>
+  );
+};
+
+export default Grills;

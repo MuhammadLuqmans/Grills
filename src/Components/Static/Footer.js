@@ -8,6 +8,7 @@ const myStyles = makeStyles((theme)=>({
         padding:"40px 20px",
         backgroundColor:"#fff",
         height:"400px",
+        borderTop:"1px solid #d3d0d0",
     },
     title_Links:{
         textDecoration:"none",
@@ -53,7 +54,7 @@ const myStyles = makeStyles((theme)=>({
     }
 }))
 
-const Footer =()=>{
+const MyFooter =()=>{
     const classes = myStyles()
     return(
         <div>
@@ -132,4 +133,4 @@ const Footer =()=>{
     )
 }
 
-export default Footer
+export default MyFooter

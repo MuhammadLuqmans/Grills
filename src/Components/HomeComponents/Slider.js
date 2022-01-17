@@ -91,7 +91,7 @@ class HomeSlider extends Component {
                     height: "300px",
                     backgroundRepeat: "no-reapet",
                     backgroundSize: "cover",
-                    border: "10px solid #fff",
+                    border: "0px solid #fff",
                   }}
                 >
                   <div style={{ backgroundColor:"#ffffff59",marginTop:"130px"}}>

@@ -2,8 +2,7 @@ import { Grid ,Box ,Button } from '@material-ui/core';
 import React from 'react'
 import { makeStyles } from '@material-ui/core/styles';
 import Grills from './Grills';
-import HomeFooter from './FooterBanner';
-import Footer from '../Static/Footer'
+
 
 const myStyles = makeStyles((theme)=>({
     Home_Head_Container:{
@@ -52,11 +51,12 @@ const myStyles = makeStyles((theme)=>({
         color:"#fff",
         fontWeight:"500",
         width:"152px",
-        padding:"8px 0px",
+        padding:"13px 0px",
         textTransform:"capitalize",
         fontSize:"16px",
         fontFamily:"Roboto Slab",
-        letterSpacing:"0.05em"
+        letterSpacing:"0.05em",
+        zIndex:0,
     },
     text:{
         marginBottom:"0px",
@@ -82,27 +82,25 @@ const HomeHeader = () => {
     const classes = myStyles()
     
     return(
+        <>
         <div className={classes.Home_Head_Container}>
         <Grid className={classes.Home_Head_text}>
         <Box className={classes.Header_Text}>
         <p className={classes.text}>Everything You Need<br /> to Fire Up Your New<br /> Grill​</p>
         <div className={classes.main_button_box}>
         <div>
-        <Button variant='contained' className={classes.btn_header}>Recipies</Button>
+        <button variant='contained' className={classes.btn_header}>Recipies</button>
         </div>
         <br />
         <div>
-        <Button variant='contained' className={classes.btn_header}>Grill Skills</Button>
+        <button variant='contained' className={classes.btn_header}>Grill Skills</button>
         </div>
         </div>
         </Box>
         </Grid>
-        <div className={classes.Home_slider}>
-        <Grills />
+       
         </div>
-        <HomeFooter />
-        <Footer />
-        </div>
+        </>
     )
 }
 export default HomeHeader;

@@ -7,6 +7,7 @@ import MobileNavbar from '../Components/Static/MobileNav'
 import Footer from '../Components/Static/Footer'
 import "./Layout.css"
 
+
 const Layout =()=>{
     return(
         <div>
@@ -16,10 +17,14 @@ const Layout =()=>{
         <div className='MobileNav'>
         <MobileNavbar />
         </div>
+
         <Routes>
         <Route excet path='/' element={<Home />}/>
         <Route excet path="/grills" element={<Grills />} />
         </Routes>
+        <div>
+        <Footer />
+        </div>
         </div>
     )
 }

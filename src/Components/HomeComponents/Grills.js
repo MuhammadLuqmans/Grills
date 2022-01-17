@@ -21,7 +21,8 @@ const myStyles = makeStyles((theme) => ({
   },
   Banner_card: {
     backgroundImage: "url(./assets/Banners/Ban.jpg)",
-    width: "100%",
+    maxWidth: "1200px",
+    margin:"auto",
     backgroundRepeat: "none",
     backgroundSize: "cover",
     textAlign: "right",
@@ -112,7 +113,7 @@ const myStyles = makeStyles((theme) => ({
     color: "#fff",
     fontWeight: "500",
     width: "152px",
-    padding: "0px 0px",
+    padding: "10px 0px",
     textTransform: "capitalize",
     fontSize: "16px",
     fontFamily: "Roboto Slab",
@@ -121,7 +122,8 @@ const myStyles = makeStyles((theme) => ({
   },
   Banner_card_two:{
     backgroundImage: "url(./assets/Banners/Bann2.jpg)",
-    width: "100%",
+    maxWidth: "1200px",
+    margin:"auto",
     backgroundRepeat: "none",
     backgroundSize: "cover",
     textAlign: "left",
@@ -134,6 +136,7 @@ const myStyles = makeStyles((theme) => ({
     },
     [theme.breakpoints.down("sm")]: {
       height: "400px",
+      width:"100%"
     },
   },
   Grills_sub_titles:{
@@ -160,28 +163,36 @@ const myStyles = makeStyles((theme) => ({
      padding:"20px 0px",
    },
    
+ },
+ main_div_full_body:{
+   maxWidth:"1200px",
+   margin:"auto",
  }
 }));
 
 const Grills = () => {
   const classes = myStyles();
   return (
-    <div className="mt-10 max-w-[1170px] mx-auto">
+    <>
+    <div className={classes.main_div_full_body}>
       <Typography className={classes.Grill_Title}>Find Your Grill</Typography>
       <Grid item xs={12}>
         <HomeSlider />
       </Grid>
+      </div>
       <div className={classes.Banner_card}>
         <div className={classes.text_wrapper}>
           <h1 className={classes.sub_title_item}>
             TOOLS, COOKWARE, GEAR & MORE
           </h1>
           <h2 className={classes.title_items}>New Year, New Accessories​</h2>
-          <Button variant="contained" className={classes.btn_header}>
+          <button variant="contained" className={classes.btn_header}>
             Shop Now
-          </Button>
+          </button>
         </div>
       </div>
+    <div className={classes.main_div_full_body}>
+
       <Typography className={classes.Grill_Title}>
         Our Favorite Picks
       </Typography>
@@ -216,17 +227,19 @@ const Grills = () => {
           );
         })}
       </Grid>
+      </div>
       <div className={classes.Banner_card_two}>
         <div className={classes.text_wrapper}>
           <h1 className={classes.sub_title_item}>
           NEW GRILL?
           </h1>
           <h2 className={classes.title_items}>Register for the Full Weber Grill Experience​</h2>
-          <Button variant="contained" className={classes.btn_header}>
+          <button variant="contained" className={classes.btn_header}>
             Rigster Now
-          </Button>
+          </button>
         </div>
       </div>
+    <div className={classes.main_div_full_body}>
       
       <Typography className={classes.Grill_Title}>
       From Our Backyard to Yours
@@ -266,7 +279,7 @@ const Grills = () => {
       <Typography className={classes.Grill_Title}>
       Why Buy From Weber
       </Typography>
-      <Grid item container xs={12}>
+      <Grid item container xs={12} >
       {IconsData.map(data=>{
         return(
       <Grid item xs={12} sm={6} md={3} key={data.id} className={classes.Icons_Card_section}>
@@ -281,6 +294,7 @@ const Grills = () => {
       })}
       </Grid>
     </div>
+    </>
   );
 };
 
